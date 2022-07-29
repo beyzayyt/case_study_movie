@@ -72,7 +72,7 @@ class _MovieRecomenderHomeState extends State<MovieRecomenderHome> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.amber[100],
+          backgroundColor: Colors.amber[200],
           elevation: 0,
           title: Text(LocaleKeys.main_title.tr()),
           leading: GestureDetector(
