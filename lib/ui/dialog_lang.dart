@@ -1,17 +1,11 @@
 import 'package:case_study/localization/constant.dart';
 import 'package:case_study/ui/home_page.dart';
 import 'package:easy_localization/src/public_ext.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class IconLanguage extends StatefulWidget {
+class IconLanguage extends StatelessWidget {
   const IconLanguage({Key? key}) : super(key: key);
 
-  @override
-  State<IconLanguage> createState() => _IconLanguageState();
-}
-
-class _IconLanguageState extends State<IconLanguage> {
   @override
   Widget build(BuildContext context) {
     return IconButton(
@@ -26,8 +20,10 @@ class _IconLanguageState extends State<IconLanguage> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              primary: Colors.amber,
+                            ),
                             onPressed: () {
-
                               context.setLocale(AppConstant.ES_LOCALE);
                             },
                             child: Column(
@@ -37,6 +33,9 @@ class _IconLanguageState extends State<IconLanguage> {
                               ],
                             )),
                         ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              primary: Colors.amber,
+                            ),
                             onPressed: () {
                               context.setLocale(AppConstant.EN_LOCALE);
                             },
@@ -47,6 +46,9 @@ class _IconLanguageState extends State<IconLanguage> {
                               ],
                             )),
                         ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              primary: Colors.amber,
+                            ),
                             onPressed: () {
                               context.setLocale(AppConstant.TR_LOCALE);
                             },
@@ -57,6 +59,9 @@ class _IconLanguageState extends State<IconLanguage> {
                               ],
                             )),
                         ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.amber,
+                          ),
                             onPressed: () {
                               context.setLocale(AppConstant.DE_LOCALE);
                             },
@@ -70,9 +75,10 @@ class _IconLanguageState extends State<IconLanguage> {
                     ),
                     TextButton(
                         onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => MovieRecomenderHome()));
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => MovieRecomenderHome()));
                         },
-                        child: Text("Ok"))
+                        child: Text("Ok",style: TextStyle(color:  Colors.amber),))
                   ],
                 );
               });
