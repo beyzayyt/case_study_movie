@@ -1,3 +1,5 @@
+import 'package:case_study/localization/local_keys.dart';
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -12,7 +14,7 @@ class _ResetPasswordState extends State<ResetPassword> {
 
   late String _email;
   final auth = FirebaseAuth.instance;
-  String description = "Kayıt olduğunuz e-mail hesabınız ile istek yollarayak mail adresinize gelen bağlantıdan gerekli şifre değişimini yapabilirsiniz";
+  String description = LocaleKeys.resetPasswordDescription.tr();
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +22,7 @@ class _ResetPasswordState extends State<ResetPassword> {
       appBar: AppBar(
         backgroundColor: Colors.amber[100],
         elevation: 0,
-        title: const Text("Şifre Sıfırlama",style: TextStyle(color: Colors.amber)),
+        title:  Text(LocaleKeys.resetPassword.tr(),style: TextStyle(color: Colors.amber)),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -42,7 +44,7 @@ class _ResetPasswordState extends State<ResetPassword> {
             height: 30,
           ),
           MovieButton(
-            buttonDescription: 'İstek yolla',
+            buttonDescription: LocaleKeys.resetSendRequest.tr(),
             onPressed: () {
               auth.sendPasswordResetEmail(email: _email);
               Navigator.of(context).pop();

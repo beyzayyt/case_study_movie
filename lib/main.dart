@@ -1,5 +1,3 @@
-
-// import 'package:case_study/theme/theme_state.dart';
 import 'package:case_study/ui/home_page.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_core/firebase_core.dart';

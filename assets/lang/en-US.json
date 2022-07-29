@@ -1,6 +1,22 @@
 {
   "main": {
     "title": "Language Support",
-    "bodytext": "Visit mobilerDev for language support article"
+
+    "homeLottieDescriptionTitle": "Users can search for movies,\nthey will be able to create their favorite lists",
+    "homeLottieDescription": "Please login to continue",
+    "homeTextFieldEmailDesc": "Enter your e-mail address",
+    "homeTextFieldPasswordDesc": "enter password",
+    "homeButtonEntry": "Login",
+    "homeTextSpanAccountExist": "Login",
+    "homeTextSpanForgotPass": "Forgot Password",
+
+    "resetPasswordDescription": "By sending a request with your registered e-mail account, you can change the required password from the link sent to your e-mail address.",
+    "resetPassword": "Reset Password",
+    "resetSendRequest" : "Send Request",
+
+    "searchMovieTitle" : "Movies",
+    "searchHint" : "Search",
+    "searchLoading" : "Loading",
+    "signUpButton" : "Sign Up"
   }
 }

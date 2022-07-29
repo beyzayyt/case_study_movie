@@ -1,6 +1,8 @@
+import 'package:case_study/localization/local_keys.dart';
 import 'package:case_study/main.dart';
 import 'package:case_study/ui/search_movie_page.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -75,7 +77,7 @@ class _SignUpState extends State<SignUp> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       MovieButton(
-                        buttonDescription:'Kaydol',
+                        buttonDescription:LocaleKeys.signUpButton.tr(),
                         onPressed: () {
                           signUp();
                           Navigator.push(

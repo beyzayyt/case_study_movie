@@ -13,6 +13,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'component/lottie_animation.dart';
 import 'component/movie_button.dart';
+import 'dialog_lang.dart';
 
 class MovieRecomenderHome extends StatefulWidget {
   const MovieRecomenderHome({Key? key}) : super(key: key);
@@ -74,13 +75,6 @@ class _MovieRecomenderHomeState extends State<MovieRecomenderHome> {
         appBar: AppBar(
           backgroundColor: Colors.amber[200],
           elevation: 0,
-          title: Text(LocaleKeys.main_title.tr()),
-          leading: GestureDetector(
-            onTap: () { context.setLocale(AppConstant.ES_LOCALE); },
-            child: const Icon(
-              Icons.change_circle,  // add custom icons also
-            ),
-          ),
           actions: <Widget>[
             IconButton(
               icon: Icon(Icons.settings),
@@ -99,8 +93,8 @@ class _MovieRecomenderHomeState extends State<MovieRecomenderHome> {
             children: [
               LottieAnimation(
                 path: 'assets/lottie/movie.json',
-                descriptionTitle: 'Kullanıcılar film arayıp, \nfavori listelerini oluşturabilecekler',
-                description: 'Lütfen devam etmek için giriş yapınız',
+                descriptionTitle: LocaleKeys.homeLottieDescriptionTitle.tr(),
+                description: LocaleKeys.homeLottieDescription.tr(),
               ),
               MovieButton(
                 onPressed: () {
@@ -120,21 +114,21 @@ class _MovieRecomenderHomeState extends State<MovieRecomenderHome> {
                                 TextFormField(
                                     keyboardType: TextInputType.text,
                                     controller: t1,
-                                    decoration: const InputDecoration(
-                                      hintText: "Mail adresinizi giriniz",
+                                    decoration: InputDecoration(
+                                      hintText: LocaleKeys.homeTextFieldEmailDesc.tr(),
                                       border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(10))),
                                     )),
                                 SizedBox(height: 30),
                                 TextFormField(
                                     keyboardType: TextInputType.text,
                                     controller: t2,
-                                    decoration: const InputDecoration(
-                                      hintText: "Şifre giriniz",
+                                    decoration: InputDecoration(
+                                      hintText: LocaleKeys.homeTextFieldPasswordDesc.tr(),
                                       border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(10))),
                                     )),
                                 SizedBox(height: 30),
                                 MovieButton(
-                                  buttonDescription: 'Giriş yap',
+                                  buttonDescription: LocaleKeys.homeButtonEntry.tr(),
                                   onPressed: () {
                                     signIn();
                                   },
@@ -143,7 +137,7 @@ class _MovieRecomenderHomeState extends State<MovieRecomenderHome> {
                                 RichText(
                                     text: TextSpan(style: TextStyle(color: Colors.grey, fontSize: 20.0), children: [
                                       TextSpan(
-                                          text: 'Hesabınız yok mu',
+                                          text: LocaleKeys.homeTextSpanAccountExist.tr(),
                                           recognizer: TapGestureRecognizer()
                                             ..onTap = () {
                                               Navigator.push(context,
@@ -154,7 +148,7 @@ class _MovieRecomenderHomeState extends State<MovieRecomenderHome> {
                                 RichText(
                                     text: TextSpan(style: TextStyle(color: Colors.grey, fontSize: 20.0), children: [
                                       TextSpan(
-                                          text: 'Şifremi Unuttum',
+                                          text: LocaleKeys.homeTextSpanForgotPass.tr(),
                                           recognizer: TapGestureRecognizer()
                                             ..onTap = () {
                                               Navigator.push(context,
@@ -167,8 +161,9 @@ class _MovieRecomenderHomeState extends State<MovieRecomenderHome> {
                         );
                       });
                 },
-                buttonDescription: 'Giriş Yap',
+                buttonDescription: LocaleKeys.homeButtonEntry.tr(),
               ),
+              IconLanguage(),
             ],
           ),
         ),

@@ -1,4 +1,6 @@
 import 'dart:convert';
+import 'package:case_study/localization/local_keys.dart';
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:http/http.dart' as http;
 import 'package:case_study/model/movie_model.dart';
 import 'package:flutter/cupertino.dart';
@@ -42,7 +44,8 @@ class _SearchMovieState extends State<SearchMovie> {
       appBar: AppBar(
         backgroundColor: Colors.amber[100],
         elevation: 0,
-        title: const Text("Filmler",style: TextStyle(color: Colors.amber)),
+        title:  Text( LocaleKeys.searchMovieTitle.tr(),
+        style: TextStyle(color: Colors.amber)),
       ),
       body: Column(
         children: [
@@ -55,8 +58,8 @@ class _SearchMovieState extends State<SearchMovie> {
                   searchString = value.toLowerCase();
                 });
               },
-              decoration: const InputDecoration(
-                  labelText: 'Ara', suffixIcon: Icon(Icons.search)),
+              decoration:  InputDecoration(
+                  labelText: LocaleKeys.searchHint.tr(), suffixIcon: Icon(Icons.search)),
             ),
           ),
           const SizedBox(height: 10),
@@ -68,7 +71,7 @@ class _SearchMovieState extends State<SearchMovie> {
                       print(snapshot.data);
                     }
                     if(snapshot.data == null) {
-                      return const Center(child: Text("Yükleniyor..."));
+                      return  Center(child: Text(LocaleKeys.searchLoading.tr()));
                     } else {
                       return ListView.separated(
                           itemBuilder: (BuildContext context, int index) {

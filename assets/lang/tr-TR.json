@@ -1,6 +1,22 @@
 {
   "main": {
     "title": "Dil Desteği",
-    "bodytext": "Dil Desteği yazısı için MobilerDev'i ziyaret edin."
+
+    "homeLottieDescriptionTitle": "Kullanıcılar film arayıp, \nfavori listelerini oluşturabilecekler",
+    "homeLottieDescription": "Lütfen devam etmek için giriş yapınız",
+    "homeTextFieldEmailDesc": "Mail adresinizi giriniz",
+    "homeTextFieldPasswordDesc": "Şifre giriniz",
+    "homeButtonEntry": "Giriş Yap",
+    "homeTextSpanAccountExist": "Giriş Yap",
+    "homeTextSpanForgotPass": "Şifremi Unuttum",
+
+    "resetPasswordDescription": "Kayıt olduğunuz e-mail hesabınız ile istek yollarayak mail adresinize gelen bağlantıdan gerekli şifre değişimini yapabilirsiniz",
+    "resetPassword": "Şifre Sıfırlama",
+    "resetSendRequest" : "İstek Yolla",
+
+    "searchMovieTitle" : "Filmler",
+    "searchHint" : "Ara",
+    "searchLoading" : "Yükleniyor",
+    "signUpButton" : "Kaydol"
   }
 }
