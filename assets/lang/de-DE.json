@@ -1,6 +1,22 @@
 {
   "main": {
     "title": "Sprachunterstützung",
-    "bodytext": "Besuchen Sie MobilerDev für den Artikel des Sprachunterstützungsartikels"
+
+    "homeLottieDescriptionTitle": "Benutzer können nach Filmen suchen und ihre Favoriten listen erstellen",
+    "homeLottieDescription": "Bitte einloggen zum Fortfahren",
+    "homeTextFieldEmailDesc": "Geben sie ihre E-Mailadresse ein",
+    "homeTextFieldPasswordDesc": "Passwort eingeben",
+    "homeButtonEntry": "Anmeldung",
+    "homeTextSpanAccountExist": "Anmeldung",
+    "homeTextSpanForgotPass": "Ich habe mein Passwort vergessen",
+
+    "resetPasswordDescription": "Durch Senden einer Anfrage mit Ihrem registrierten E-Mail-Konto können Sie das erforderliche Passwort über den an Ihre E-Mail-Adresse gesendeten Link ändern.",
+    "resetPassword": "Passwort zurücksetzen",
+    "resetSendRequest" : "Anfrage senden",
+
+    "searchMovieTitle" : "Filme",
+    "searchHint" : "Suche",
+    "searchLoading" : "Wird geladen",
+    "signUpButton" : "Registrieren"
   }
 }

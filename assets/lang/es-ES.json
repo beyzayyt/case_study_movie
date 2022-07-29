@@ -1,6 +1,22 @@
 {
   "main": {
-    "title": "Soporte de lengua",
-    "bodytext": "Visite Mobilerdev para la escritura de soporte de idiomas."
+    "title": "Ayuda de idioma",
+
+    "homeLottieDescriptionTitle": "Los usuarios podrán buscar películas y crear sus listas de favoritos",
+    "homeLottieDescription": "Por favor inicie sesión para continuar",
+    "homeTextFieldEmailDesc": "Ingrese su dirección de correo electrónico",
+    "homeTextFieldPasswordDesc": "Introducir la contraseña",
+    "homeButtonEntry": "Acceso",
+    "homeTextSpanAccountExist": "Acceso",
+    "homeTextSpanForgotPass": "Olvidé mi contraseña",
+
+    "resetPasswordDescription": "Al enviar una solicitud con su cuenta de correo electrónico registrada, puede cambiar la contraseña requerida desde el enlace enviado a su dirección de correo electrónico.",
+    "resetPassword": "Restablecimiento de contraseña",
+    "resetSendRequest" : "Enviar petición",
+
+    "searchMovieTitle" : "Películas",
+    "searchHint" : "Búsqueda",
+    "searchLoading" : "Cargando",
+    "signUpButton" : "Registro"
   }
 }
