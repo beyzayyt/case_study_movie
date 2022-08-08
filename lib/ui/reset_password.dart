@@ -11,7 +11,6 @@ class ResetPassword extends StatefulWidget {
 }
 
 class _ResetPasswordState extends State<ResetPassword> {
-
   late String _email;
   final auth = FirebaseAuth.instance;
   String description = LocaleKeys.resetPasswordDescription.tr();
@@ -22,17 +21,29 @@ class _ResetPasswordState extends State<ResetPassword> {
       appBar: AppBar(
         backgroundColor: Colors.amber[100],
         elevation: 0,
-        title:  Text(LocaleKeys.resetPassword.tr(),style: TextStyle(color: Colors.amber)),
+        title: Text(LocaleKeys.resetPassword.tr(), style: Theme.of(context).textTheme.subtitle1),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(description, textAlign: TextAlign.center),
+          Text(description, textAlign: TextAlign.center, style: Theme.of(context).textTheme.subtitle1),
           Padding(
             padding: const EdgeInsets.all(30.0),
             child: TextField(
+              cursorColor: Colors.amber,
               keyboardType: TextInputType.emailAddress,
-              decoration: const InputDecoration(hintText: 'Email'),
+              decoration: InputDecoration(
+                focusedBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Theme.of(context).primaryColor),
+                ),
+                enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Theme.of(context).primaryColor),
+                    borderRadius: const BorderRadius.all(
+                      Radius.circular(10),
+                    )),
+                hintText: 'Email',
+                hintStyle: Theme.of(context).textTheme.subtitle1,
+              ),
               onChanged: (value) {
                 setState(() {
                   _email = value.trim();
@@ -44,6 +55,7 @@ class _ResetPasswordState extends State<ResetPassword> {
             height: 30,
           ),
           MovieButton(
+            context: context,
             buttonDescription: LocaleKeys.resetSendRequest.tr(),
             onPressed: () {
               auth.sendPasswordResetEmail(email: _email);

@@ -4,7 +4,7 @@ import 'package:lottie/lottie.dart';
 
 class LottieAnimation extends Column {
   LottieAnimation(
-      {Key? key,
+      {Key? key, required BuildContext context,
       MainAxisAlignment mainAxisAlignment = MainAxisAlignment.center,
       MainAxisSize mainAxisSize = MainAxisSize.max,
       CrossAxisAlignment crossAxisAlignment = CrossAxisAlignment.center,
@@ -29,7 +29,7 @@ class LottieAnimation extends Column {
               Text(
                 descriptionTitle,
                 textAlign: TextAlign.center,
-                style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, fontStyle: FontStyle.italic),
+                style: Theme.of(context).textTheme.subtitle1,
               ),
               const SizedBox(
                 height: 20,
@@ -37,7 +37,7 @@ class LottieAnimation extends Column {
               Text(
                 description,
                 textAlign: TextAlign.center,
-                style: const TextStyle(fontSize: 15, fontWeight: FontWeight.normal, fontStyle: FontStyle.italic),
+                style: Theme.of(context).textTheme.subtitle1,
               ),
             ]);
 }

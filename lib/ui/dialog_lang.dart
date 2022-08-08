@@ -9,12 +9,14 @@ class IconLanguage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-        icon: Icon(Icons.language),
+        color: Theme.of(context).primaryColor,
+        icon: const Icon(Icons.language),
         onPressed: () {
           showDialog(
               context: context,
               builder: (context) {
                 return AlertDialog(
+                  backgroundColor: Theme.of(context).scaffoldBackgroundColor,
                   actions: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -27,7 +29,7 @@ class IconLanguage extends StatelessWidget {
                               context.setLocale(AppConstant.ES_LOCALE);
                             },
                             child: Column(
-                              children: [
+                              children: const [
                                 Icon(Icons.language),
                                 Text("es-ES"),
                               ],
@@ -40,7 +42,7 @@ class IconLanguage extends StatelessWidget {
                               context.setLocale(AppConstant.EN_LOCALE);
                             },
                             child: Column(
-                              children: [
+                              children: const [
                                 Icon(Icons.language),
                                 Text("EN-US"),
                               ],
@@ -53,20 +55,20 @@ class IconLanguage extends StatelessWidget {
                               context.setLocale(AppConstant.TR_LOCALE);
                             },
                             child: Column(
-                              children: [
+                              children: const [
                                 Icon(Icons.language),
                                 Text("TR"),
                               ],
                             )),
                         ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.amber,
-                          ),
+                            style: ElevatedButton.styleFrom(
+                              primary: Colors.amber,
+                            ),
                             onPressed: () {
                               context.setLocale(AppConstant.DE_LOCALE);
                             },
                             child: Column(
-                              children: [
+                              children: const [
                                 Icon(Icons.language),
                                 Text("DE"),
                               ],
@@ -75,10 +77,12 @@ class IconLanguage extends StatelessWidget {
                     ),
                     TextButton(
                         onPressed: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => MovieRecomenderHome()));
+                          Navigator.pop(context, MaterialPageRoute(builder: (context) => const MovieRecommenderHome()));
                         },
-                        child: Text("Ok",style: TextStyle(color:  Colors.amber),))
+                        child: const Text(
+                          "Ok",
+                          style: TextStyle(color: Colors.amber),
+                        ))
                   ],
                 );
               });

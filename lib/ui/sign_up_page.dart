@@ -1,6 +1,4 @@
 import 'package:case_study/localization/local_keys.dart';
-import 'package:case_study/main.dart';
-import 'package:case_study/ui/search_movie_page.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_localization/src/public_ext.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -39,21 +37,34 @@ class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.amber[100],
+        elevation: 0,
+        title: Text(LocaleKeys.signUpButton.tr(), style: Theme.of(context).textTheme.subtitle1),
+      ),
       body: Padding(
-        padding: const EdgeInsets.all(9.0),
+        padding:  const EdgeInsets.all(9.0),
         child: Container(
-          padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+          padding:  const EdgeInsets.fromLTRB(20, 0, 20, 0),
           height: MediaQuery.of(context).size.height / 2,
-          margin: const EdgeInsets.fromLTRB(0, 90, 0, 0),
+          margin:   const EdgeInsets.fromLTRB(0, 90, 0, 0),
           child: Center(
               child: Column(
                 children: [
                   TextFormField(
+                    cursorColor: Colors.amber,
                     keyboardType: TextInputType.emailAddress,
                     controller: t1,
-                    decoration: const InputDecoration(
+                    decoration:  InputDecoration(
                       hintText: "E-mail",
-                      border: OutlineInputBorder(
+                      hintStyle: Theme.of(context).textTheme.subtitle1,
+                        focusedBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: Theme.of(context).primaryColor),
+                        ),
+                      enabledBorder:  OutlineInputBorder(
+                          borderSide: BorderSide(
+                              color: Theme.of(context).primaryColor
+                          ),
                           borderRadius: BorderRadius.all(Radius.circular(10))),
                     ),
                   ),
@@ -61,12 +72,20 @@ class _SignUpState extends State<SignUp> {
                     height: 25,
                   ),
                   TextFormField(
+                    cursorColor: Colors.amber,
                     keyboardType: TextInputType.text,
                     controller: t2,
                     obscureText: true,
-                    decoration: const InputDecoration(
+                    decoration:  InputDecoration(
                       hintText: "Password",
-                      border: OutlineInputBorder(
+                      hintStyle: Theme.of(context).textTheme.subtitle1,
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Theme.of(context).primaryColor),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                              color: Theme.of(context).primaryColor
+                          ),
                           borderRadius: BorderRadius.all(Radius.circular(10))),
                     ),
                   ),
@@ -77,6 +96,7 @@ class _SignUpState extends State<SignUp> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       MovieButton(
+                        context: context,
                         buttonDescription:LocaleKeys.signUpButton.tr(),
                         onPressed: () {
                           signUp();
@@ -84,7 +104,7 @@ class _SignUpState extends State<SignUp> {
                               context,
                               MaterialPageRoute(
                               builder: (BuildContext context) =>
-                              MovieRecomenderHome()));
+                              MovieRecommenderHome()));
                         },
                       ),
                       SizedBox(
