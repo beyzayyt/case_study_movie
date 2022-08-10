@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
+import 'package:case_study/ui/presentation/theme/themeData.dart';
 import 'package:flutter/material.dart';
-import 'package:case_study/presentation/theme/themeData.dart';
 
 part 'switch_state.dart';
 

@@ -30,28 +30,26 @@ class _MovieRecommenderHomeState extends State<MovieRecommenderHome> {
   var incomingTitlePassword = "";
   var incomingContentPassword = "";
 
-  void addingText() {
-    //Created collection and put it in data.
-    //Can update exist data.
-    FirebaseFirestore.instance.collection("user_information").doc(t1.text) // text from t1
-        .set({'title': t1.text, 'content': t2.text}).whenComplete(() => bringText());
-    //Adding data
-  }
-
-  void bringText() {
-    //Bring text
-    FirebaseFirestore.instance.collection("user_information").doc(t1.text).get().then((incomingData) => {
-          setState(() {
-            incomingTitleUsername = incomingData.data()!['key1'];
-            incomingContentPassword = incomingData.data()!['key2'];
-          })
-        });
-  }
-
-  void signIn() {
-    FirebaseAuth.instance.signInWithEmailAndPassword(email: t1.text, password: t2.text).then((kullanici) {
+  Future<void> signIn() async {
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+          email: t1.text,
+          password: t2.text
+      );
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => SearchMovie()));
-    });
+    } on FirebaseAuthException catch  (e) {
+      print('Failed with error code: ${e.code}');
+      print(e.message);
+      showDialog(
+          context: context,
+          builder: (context) {
+            return AlertDialog(
+              title: Text("${e.message}"),
+            );
+          });
+    }
+    t1.clear();
+    t2.clear();
   }
 
   void deletingText() {
@@ -153,6 +151,7 @@ class _MovieRecommenderHomeState extends State<MovieRecommenderHome> {
                                 buttonDescription: LocaleKeys.homeButtonEntry.tr(),
                                 onPressed: () {
                                   signIn();
+                                  FocusManager.instance.primaryFocus?.unfocus();
                                 },
                               ),
                               const SizedBox(height: 30),
@@ -162,8 +161,8 @@ class _MovieRecommenderHomeState extends State<MovieRecommenderHome> {
                                     text: LocaleKeys.homeTextSpanAccountExist.tr(),
                                     recognizer: TapGestureRecognizer()
                                       ..onTap = () {
-                                        Navigator.push(
-                                            context, MaterialPageRoute(builder: (BuildContext context) => const SignUp()));
+                                        Navigator.push(context,
+                                            MaterialPageRoute(builder: (BuildContext context) => const SignUp()));
                                       }),
                               ])),
                               const SizedBox(height: 30),
